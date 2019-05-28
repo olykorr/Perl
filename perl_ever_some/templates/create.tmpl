@@ -1,0 +1,12 @@
+<h1>Новая статья</h1>
+<div class="article_wrap container">
+    <form class="add_art_form" method="post" action="/~user2/perl_newspaper/index.cgi/create">
+	<input type="text" name="title" placeholder="Название статьи">
+	<textarea name="body" placeholder="Полный текст статьи"></textarea>
+	<label>Опубликовать статью
+	    <input type="checkbox" name="status" value="1" checked="">
+	</label>
+	
+	<button type="submit" class="btn btn_add">Добавить статью</button>
+    </form>
+</div>
