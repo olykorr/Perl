@@ -19,7 +19,7 @@ sub new {
     my $class = ref($_[0]) || $_[0];
     return bless({}, $class);
 }
-
+=begin
 sub Autorize ($$$) 
 {
 	my($self, $login, $pass) = @_;
@@ -45,12 +45,14 @@ sub Autorize ($$$)
 	}
 }
 
+
 sub Is_Auth()
 {
 	my $session = $config->getSession();
 	my $uid = $session->getSessionElement('uid');	
 	return $uid;
 }
+
 
 sub getUser()
 {
@@ -67,5 +69,6 @@ sub logout()
 {
 	$config->getSession->clearSessionElements(["uid"]);
 }
-
+=end
+=cut
 return 1;

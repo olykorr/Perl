@@ -16,6 +16,7 @@ my $config = ProgramConfig->new();
 
  }
  
+=begin
  sub checkError() {	
 	my ($self) = @_;
 	my $code =  $config->getSession()->getSessionElement('Error');
@@ -27,5 +28,7 @@ my $config = ProgramConfig->new();
 	}
 
  }
+=end
+=cut
 
 return 1;

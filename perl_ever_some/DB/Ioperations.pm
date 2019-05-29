@@ -8,7 +8,7 @@ use warnings;
 
 use DB::Connector;
 
-my $connection = DB::Connector->new("DBI:mysql","localhost","user2","user2","user2");
+my $connection = DB::Connector->new("DBI:mysql","localhost","user16","user16","user16");
 my $tableName="";
 
 sub getConnection {

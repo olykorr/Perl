@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-#writed by user2
+#writed by user16
 
 use strict;
 use warnings;
@@ -29,40 +29,6 @@ my $cgi = CGI->new;
 
 my $config = ProgramConfig->new();
 
-#Работаем с сессией и куками
-#my $session;
-#my %cookies = fetch CGI::Cookie;
-
-
-#$session = Tools::Session->new();		
-#$session->set('sessionDir', dirname(__FILE__) ."/sessions");
-#$session->set('sessionExpires', "+2w");
-
-=begin
-sub refreshCookies {
-    my $sesheader =  $session->getCookieWithSid();
-    chomp $sesheader;
-    print $sesheader;
-    my $url = $cgi->param('url');    
-    print $cgi->redirect($url);
-}
-
-my $cookieSid;
-eval {
-	$cookieSid= $cookies{'CGISESSID'}->value;
-};
-
-if($cookieSid) {    
-    $session->set('sid', $cookieSid);
-    $session->sessionStart() || die "Somsing wrong wich session";
-    $config->setSession(\$session);
-    #Flush for corect work
-    $session->flush();
-    unless($cookieSid eq $session->getSid()) {
-	&refreshCookies();
-    }
-=end
-=cut
     #Тут вызов роутера!!!!
    eval {
 	    Router::router->new()->index(\%in);
@@ -73,11 +39,6 @@ if($cookieSid) {
 	    }
     
     
-#} else {    
-   # $session->sessionStart() || die "Somsing wrong wich session";
-    #Flush for corect work
-  #  $session->flush();
-   # &refreshCookies();
-#}
+
 
 

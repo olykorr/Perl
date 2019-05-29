@@ -1,4 +1,4 @@
-#writed by user2
+#writed by user16
 package DB::Connector;
 
 use strict;

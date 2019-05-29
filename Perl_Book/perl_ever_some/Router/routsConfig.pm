@@ -1,4 +1,4 @@
-# Writed by User 10
+# Writed by User 16
 
 package Router::routsConfig;
 
@@ -20,9 +20,6 @@ sub getMethodRoutes
     my %routes = (
         ''              => 'HomeView',
         'home'          => 'HomeView',
-       # 'logout'        => '',
-       # 'registration'  => 'RegView',
-      #  'create'        => 'CreateView'
     );
     return %routes;
 }
@@ -33,9 +30,6 @@ sub postMethodRoutes
     my %routes = (
         ''              => 'HomeView',
         'home'          => 'HomeView',
-      #  'create'        => 'CreateCtrl',
-      #  'registration'  => 'RegistrationCtrl',
-       # 'auth'          => 'HomeView'
     );
     return %routes;
 }

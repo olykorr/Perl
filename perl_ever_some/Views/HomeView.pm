@@ -7,8 +7,8 @@ use HTML::Template;
 use Views::IView;
 use Auth::AuthManager;
 use DB::PostOperations;
-use Views::AuthView;
-use Views::UserView;
+#use Views::AuthView;
+#use Views::UserView;
 use Data::Dumper;
 
 our @ISA = qw(Views::IView);
@@ -35,26 +35,29 @@ sub getContent
     my $hometmpl = $self->getTemplate();
     my $aside;
     my @articles;
-    my $userId = $user->Is_Auth();
-    
-    if ($userId)
-    {
-    	my $uref = $user->getUser($userId);
-	my %userdata = %{$uref};
+    #my $userId = $user->Is_Auth();
 
-        my $username = $userdata{'firstname'}.' '.$userdata{'lastname'};
-        my $usertmpl = Views::UserView->new()->getTemplate();
-    	$usertmpl->param(USERNAME => $username);
-    	$aside = $usertmpl->output;
-    	@articles = DB::PostOperations->new()->findAll();
-    }
-    else
-    {
-    	$aside = Views::AuthView->new()->getTemplate()->output;
-    	@articles = DB::PostOperations->new()->getPublic();
+=begin
+        if ($userId)
+        {
+            my $uref = $user->getUser($userId);
+        my %userdata = %{$uref};
 
-    }
-      
+            my $username = $userdata{'firstname'}.' '.$userdata{'lastname'};
+            my $usertmpl = Views::UserView->new()->getTemplate();
+            $usertmpl->param(USERNAME => $username);
+            $aside = $usertmpl->output;
+            @articles = DB::PostOperations->new()->findAll();
+        }
+        else
+        {
+            $aside = Views::AuthView->new()->getTemplate()->output;
+            @articles = DB::PostOperations->new()->getPublic();
+
+        }
+=end
+=cut
+
     $hometmpl->param(ARTICLE => \@articles);
     
     $layout->param(CONTENT => $hometmpl->output);
