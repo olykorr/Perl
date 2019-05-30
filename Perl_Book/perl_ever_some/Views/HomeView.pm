@@ -33,7 +33,6 @@ sub getContent
     my $aside;
     my @articles;
     @articles = DB::PostOperations->new()->findAll();
-      
     $hometmpl->param(ARTICLE => \@articles);
     
     $layout->param(CONTENT => $hometmpl->output);

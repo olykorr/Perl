@@ -1,0 +1,16 @@
+<h1>Книга</h1>
+<div class="article_wrap">
+
+<TMPL_LOOP NAME='ARTICLE'>
+<div class="article_block">
+    <h2 class="article_title"><TMPL_VAR NAME='title'></h2>
+    <div class="article_author"><TMPL_VAR NAME='firstname'> <TMPL_VAR NAME='lastname'></div>
+    <div class="article_date"><TMPL_VAR NAME='dat'></div>
+    <div class="article_text"><TMPL_VAR NAME='body'></div>
+  
+    <div class="clearfix">
+	   <a class="btn btn_read" href="/~user16/Perl/Perl_Book/perl_ever_some/index.cgi/singleBook">Подробней</a>
+    </div>
+</div>
+</TMPL_LOOP>
+</div>

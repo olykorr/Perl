@@ -20,6 +20,7 @@ sub getMethodRoutes
     my %routes = (
         ''              => 'HomeView',
         'home'          => 'HomeView',
+        'singleBook'    => 'SingleView',
     );
     return %routes;
 }
@@ -30,6 +31,7 @@ sub postMethodRoutes
     my %routes = (
         ''              => 'HomeView',
         'home'          => 'HomeView',
+        'singleBook'    => 'SingleView',
     );
     return %routes;
 }

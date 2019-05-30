@@ -1,4 +1,4 @@
-# Writed by User 10
+# Writed by User 16
 
 package Router::router;
 
@@ -35,7 +35,7 @@ sub index
 }
 
 
-# return request method (POST|GET)
+
 sub _getRequestMethod
 {
     my $reqMethod;
@@ -53,8 +53,7 @@ sub _getRequestMethod
 }
 
 
-# Input URL (http://site.com/index.cgi/home/)
-# # return Hash
+
 sub _urlParser
 {
     my @str = split(/index.cgi/, $ENV{'REQUEST_URI'});
